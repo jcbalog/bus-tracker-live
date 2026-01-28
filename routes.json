@@ -1,52 +1,42 @@
 {
   "companies": [
-    "Erjohn & Almark Transit", "DLTB Co.", "Saulog Transit", 
-    "Don Aldrin Transport", "St. Gabriel Bus Express", 
-    "Ata Liner", "Ariel Express", "Cavite-Batangas TSMC", 
-    "Jasper Jean", "San Agustin Transport"
+    "Erjohn & Almark Transit Corporation", 
+    "DLTB Co.", 
+    "Saulog Transit", 
+    "Don Aldrin Transport Inc.", 
+    "St. Gabriel Bus Express Inc.", 
+    "Ata Liner", 
+    "Ariel Express", 
+    "Cavite-Batangas TSMC"
   ],
   "routes": {
     "1": { 
-      "name": "PITX - TERNATE (via CAVITEX)", 
-      "color": "#22c55e",
+      "name": "PITX - TERNATE", 
+      "color": "#10b981",
       "stops": ["PITX", "Kawit", "Tejero", "Tanza", "Naic", "Ternate"],
       "path": [
-        [14.508416630331535, 120.99122101850264], [14.507329034358204, 120.99077285154146], 
-        [14.508162769806606, 120.9885476780723], [14.50597850927596, 120.98760366640862],
-        [14.474282165479831, 120.96826003529074], [14.405387018395775, 120.8774019661465],
-        [14.39633828499859, 120.86668882159559], [14.280890878098685, 120.7084712667292]
-      ],
-      "detailedStops": [
-        { "lat": 14.446644, "lng": 120.915236, "name": "Centennial Bus Stop" },
-        { "lat": 14.405387, "lng": 120.877401, "name": "Tejero Bus Stop" },
-        { "lat": 14.280890, "lng": 120.708471, "name": "Ternate Terminal" }
+        [14.5084, 120.9912], [14.5073, 120.9907], 
+        [14.5081, 120.9885], [14.5059, 120.9876],
+        [14.4742, 120.9682], [14.4053, 120.8774],
+        [14.3963, 120.8666], [14.2808, 120.7084]
       ]
     },
     "2": { 
-      "name": "PITX - PALA-PALA (via AGUINALDO)", 
+      "name": "PITX - PALA-PALA", 
       "color": "#3b82f6",
       "stops": ["PITX", "Bacoor", "Imus", "Dasma", "Pala-Pala"],
       "path": [
-        [14.50898492459884, 120.9912519033425], [14.455827588964484, 120.95776624609329],
-        [14.377198751860824, 120.938899921375], [14.298700633329174, 120.9567152914414]
-      ],
-      "detailedStops": [
-        { "lat": 14.459219, "lng": 120.959415, "name": "Talaba Bus Stop" },
-        { "lat": 14.327159, "lng": 120.940111, "name": "SM Dasma Bus Stop" },
-        { "lat": 14.298700, "lng": 120.956715, "name": "Pala-Pala Terminal" }
+        [14.5089, 120.9912], [14.4558, 120.9577],
+        [14.3771, 120.9388], [14.2987, 120.9567]
       ]
     },
     "3": { 
-      "name": "PITX - TRECE (via GOV DRIVE)", 
+      "name": "PITX - TRECE", 
       "color": "#8b5cf6",
       "stops": ["PITX", "Imus", "Dasma", "GenTri", "Trece"],
       "path": [
-        [14.50898492459884, 120.9912519033425], [14.422083091524694, 120.94183535414192],
-        [14.293903179218981, 120.93890499224095], [14.280517544233465, 120.86939919610548]
-      ],
-      "detailedStops": [
-        { "lat": 14.293903, "lng": 120.938904, "name": "Manggahan Bus Stop" },
-        { "lat": 14.280517, "lng": 120.869399, "name": "Waltermart Trece Terminal" }
+        [14.5089, 120.9912], [14.4220, 120.9418],
+        [14.2939, 120.9389], [14.2805, 120.8693]
       ]
     }
   }

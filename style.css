@@ -5,8 +5,16 @@
 .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
 
 /* Map & Leaflet Overrides */
-#map { z-index: 0; background: #020617; }
-.leaflet-container { background: #020617; }
+#map {
+    z-index: 0;
+    background: #020617;
+    height: 100%;
+    width: 100%;
+}
+
+.leaflet-container {
+    background: #020617;
+}
 
 /* Glass Panel */
 .glass-panel {
@@ -16,45 +24,44 @@
 }
 
 /* Neon Glows */
-.neon-text { text-shadow: 0 0 10px rgba(6, 182, 212, 0.5); }
-
-/* Tabs */
-.tab-btn { position: relative; overflow: hidden; }
-.tab-btn.active-tab { background: rgba(15, 23, 42, 1); }
-.tab-btn.active-tab::after {
-    content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px;
+.neon-text {
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
 }
-.tab-btn[data-tab="passenger"].active-tab::after { background: #06b6d4; box-shadow: 0 0 10px #06b6d4; }
-.tab-btn[data-tab="driver"].active-tab::after { background: #10b981; box-shadow: 0 0 10px #10b981; }
-.tab-btn[data-tab="operator"].active-tab::after { background: #8b5cf6; box-shadow: 0 0 10px #8b5cf6; }
+
+/* Tab Active State */
+.tab-btn.active-tab {
+    background: rgba(15, 23, 42, 1);
+    border-bottom: 2px solid currentColor;
+}
 
 /* Bus Markers */
 .bus-icon-wrapper {
-    transition: transform 0.5s ease;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-}
-
-/* Traffic Button */
-.traffic-control {
-    background: rgba(15, 23, 42, 0.9);
-    border: 1px solid #334155;
-    color: #94a3b8;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: monospace;
-    font-size: 10px;
-    font-weight: bold;
-    text-transform: uppercase;
     transition: all 0.3s ease;
 }
-.traffic-control:hover { color: #fff; border-color: #06b6d4; }
-.traffic-control.active {
-    background: rgba(6, 182, 212, 0.1);
-    color: #06b6d4;
-    border-color: #06b6d4;
-    box-shadow: 0 0 15px rgba(6, 182, 212, 0.2);
+
+/* Flashing Red Alert for Overspeeding */
+.overspeeding-marker {
+    animation: flashRed 0.5s infinite;
+    filter: drop-shadow(0 0 15px #ef4444);
+}
+
+@keyframes flashRed {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Popup Styles */
+.leaflet-popup-content-wrapper {
+    background: rgba(15, 23, 42, 0.95);
+    color: white;
+    border: 1px solid #334155;
+    border-radius: 4px;
+}
+.leaflet-popup-tip {
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid #334155;
 }
