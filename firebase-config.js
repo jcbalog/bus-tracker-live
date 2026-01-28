@@ -1,20 +1,9 @@
 import { initializeApp } from "firebase/app";
-import { 
-    getAuth, 
-    signInAnonymously, 
-    GoogleAuthProvider, 
-    OAuthProvider, 
-    signInWithPopup,
-    PhoneAuthProvider,
-    PhoneMultiFactorGenerator,
-    RecaptchaVerifier,
-    multiFactor
-} from "firebase/auth";
-import { getFirestore, collection, doc, setDoc, getDoc, onSnapshot, deleteDoc } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
-// Replace with your OWN Firebase project config from console.firebase.google.com
 const firebaseConfig = {
-  apiKey: "AIzaSyAId2dJ-z7Vk5VNugjsLCRDiHzeMxPn9_M",
+  apiKey: "YOUR_API_KEY", // Replace with your actual keys from the console
   authDomain: "cavite-live-track.firebaseapp.com",
   databaseURL: "https://cavite-live-track-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "cavite-live-track",
@@ -24,24 +13,6 @@ const firebaseConfig = {
   measurementId: "G-XL267WFSFF"
 };
 
-// Initialize App
-export const app = initializeApp(firebaseConfig);
-
-// Initialize Services & Export Directly (Fixes build error)
+const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
-
-// Auth Providers
-export const googleProvider = new GoogleAuthProvider();
-export const microsoftProvider = new OAuthProvider('microsoft.com');
-
-// Re-export modular functions for usage in app.js
-export { 
-    signInAnonymously, 
-    signInWithPopup, 
-    PhoneAuthProvider,
-    PhoneMultiFactorGenerator,
-    RecaptchaVerifier,
-    multiFactor,
-    collection, doc, setDoc, getDoc, onSnapshot, deleteDoc 
-};

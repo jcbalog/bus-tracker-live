@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro Cavite - Operator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-950 text-white h-screen flex flex-col">
+    <nav class="p-4 border-b border-purple-500/30 bg-slate-900/50 flex justify-between items-center">
+        <div class="text-purple-400 font-bold tracking-widest"><i class="fa-solid fa-tower-broadcast mr-2"></i> FLEET COMMAND</div>
+        <a href="index.html" class="text-xs text-gray-500 hover:text-white">BACK TO MAP</a>
+    </nav>
+    <div class="flex-1 flex items-center justify-center p-4">
+        <!-- Auth -->
+        <div id="auth-section" class="w-full max-w-md glass-panel p-8 rounded-xl border border-purple-900/50">
+            <h2 class="text-2xl font-bold mb-6 text-purple-400 tracking-wider text-center">OPERATOR LOGIN</h2>
+            <div class="flex gap-2 mb-6 bg-slate-900 p-1 rounded">
+                <button id="tab-login" class="flex-1 py-2 text-xs font-bold rounded bg-purple-900 text-white transition">LOGIN</button>
+                <button id="tab-signup" class="flex-1 py-2 text-xs font-bold rounded text-gray-500 hover:text-white transition">REGISTER</button>
+            </div>
+            <form id="login-form" class="space-y-4">
+                <input type="text" id="login-user" placeholder="USERNAME" class="w-full bg-slate-900 border border-gray-700 p-3 rounded text-sm text-white outline-none focus:border-purple-500 font-mono">
+                <input type="password" id="login-pass" placeholder="PASSWORD" class="w-full bg-slate-900 border border-gray-700 p-3 rounded text-sm text-white outline-none focus:border-purple-500 font-mono">
+                <button type="submit" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 rounded tracking-widest transition">ACCESS CONSOLE</button>
+            </form>
+            <form id="signup-form" class="space-y-3 hidden">
+                <select id="reg-company" class="w-full bg-slate-900 border border-gray-700 p-3 rounded text-sm text-white outline-none focus:border-purple-500 uppercase font-mono"></select>
+                <input type="text" id="reg-address" placeholder="HQ ADDRESS" required class="w-full bg-slate-900 border border-gray-700 p-3 rounded text-sm text-white outline-none focus:border-purple-500 font-mono">
+                <input type="text" id="reg-user" placeholder="USERNAME" required class="w-full bg-slate-900 border border-gray-700 p-3 rounded text-sm text-white outline-none focus:border-purple-500 font-mono">
+                <input type="password" id="reg-pass" placeholder="PASSWORD" required class="w-full bg-slate-900 border border-gray-700 p-3 rounded text-sm text-white outline-none focus:border-purple-500 font-mono">
+                <button type="submit" class="w-full bg-purple-800 hover:bg-purple-700 text-white font-bold py-3 rounded tracking-widest transition">REGISTER FLEET</button>
+            </form>
+        </div>
+        <!-- Dashboard -->
+        <div id="dashboard-section" class="w-full max-w-4xl glass-panel p-6 rounded-xl hidden h-[80vh] flex flex-col">
+            <div class="flex justify-between items-center mb-6 border-b border-gray-700 pb-4 shrink-0">
+                <h1 class="text-xl font-bold text-white" id="op-company">Company Name</h1>
+                <button id="btn-logout" class="text-xs text-purple-400 border border-purple-900 px-3 py-1 rounded hover:bg-purple-900/20 transition">DISCONNECT</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 flex-1 overflow-hidden">
+                <div class="bg-slate-900/50 rounded border border-gray-700 flex flex-col">
+                    <div class="p-3 bg-slate-800 font-bold text-xs uppercase tracking-widest text-yellow-500 border-b border-gray-700">Pending Requests</div>
+                    <div id="requests-list" class="flex-1 overflow-y-auto p-2 space-y-2"><div class="text-center text-gray-600 text-xs py-4">NO REQUESTS</div></div>
+                </div>
+                <div class="bg-slate-900/50 rounded border border-gray-700 flex flex-col">
+                    <div class="p-3 bg-slate-800 font-bold text-xs uppercase tracking-widest text-green-500 border-b border-gray-700">Live Shift Logs</div>
+                    <div id="logs-list" class="flex-1 overflow-y-auto p-2 space-y-2"><div class="text-center text-gray-600 text-xs py-4">NO ACTIVE SHIFTS</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="operator.js"></script>
+</body>
+</html>

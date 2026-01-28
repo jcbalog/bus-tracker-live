@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro Cavite - Driver</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-950 text-white h-screen flex flex-col">
+    <nav class="p-4 border-b border-green-500/30 bg-slate-900/50 flex justify-between items-center">
+        <div class="text-green-400 font-bold tracking-widest"><i class="fa-solid fa-id-card mr-2"></i> DRIVER PORTAL</div>
+        <a href="index.html" class="text-xs text-gray-500 hover:text-white">BACK TO MAP</a>
+    </nav>
+    <div class="flex-1 flex items-center justify-center p-4">
+        <!-- Auth -->
+        <div id="auth-section" class="w-full max-w-md glass-panel p-8 rounded-xl border border-green-900/50">
+            <h2 class="text-2xl font-bold mb-6 text-green-400 tracking-wider text-center">AUTHENTICATION</h2>
+            <div class="flex gap-2 mb-6 bg-slate-900 p-1 rounded">
+                <button id="tab-login" class="flex-1 py-2 text-xs font-bold rounded bg-green-900 text-white transition">LOGIN</button>
+                <button id="tab-signup" class="flex-1 py-2 text-xs font-bold rounded text-gray-500 hover:text-white transition">REGISTER</button>
+            </div>
+            <form id="login-form" class="space-y-4">
+                <input type="text" id="login-user" placeholder="USERNAME" class="w-full bg-slate-900 border border-gray-700 p-3 rounded text-sm text-white outline-none focus:border-green-500 font-mono">
+                <input type="password" id="login-pass" placeholder="PASSWORD" class="w-full bg-slate-900 border border-gray-700 p-3 rounded text-sm text-white outline-none focus:border-green-500 font-mono">
+                <button type="submit" class="w-full bg-green-600 hover:bg-green-500 text-white font-bold py-3 rounded tracking-widest transition">ACCESS SYSTEM</button>
+            </form>
+            <form id="signup-form" class="space-y-3 hidden">
+                <input type="text" id="reg-name" placeholder="FULL NAME" required class="w-full bg-slate-900 border border-gray-700 p-3 rounded text-sm text-white outline-none focus:border-green-500 font-mono">
+                <input type="date" id="reg-dob" required class="w-full bg-slate-900 border border-gray-700 p-3 rounded text-sm text-white outline-none focus:border-green-500 font-mono">
+                <select id="reg-company" class="w-full bg-slate-900 border border-gray-700 p-3 rounded text-sm text-white outline-none focus:border-green-500 uppercase font-mono"></select>
+                <input type="text" id="reg-user" placeholder="USERNAME" required class="w-full bg-slate-900 border border-gray-700 p-3 rounded text-sm text-white outline-none focus:border-green-500 font-mono">
+                <input type="password" id="reg-pass" placeholder="PASSWORD" required class="w-full bg-slate-900 border border-gray-700 p-3 rounded text-sm text-white outline-none focus:border-green-500 font-mono">
+                <button type="submit" class="w-full bg-green-800 hover:bg-green-700 text-white font-bold py-3 rounded tracking-widest transition">SUBMIT APPLICATION</button>
+            </form>
+        </div>
+        <!-- Dashboard -->
+        <div id="dashboard-section" class="w-full max-w-lg glass-panel p-6 rounded-xl hidden">
+            <div class="flex justify-between items-start mb-6 border-b border-gray-700 pb-4">
+                <div>
+                    <h1 class="text-xl font-bold" id="driver-name">Driver Name</h1>
+                    <p class="text-green-400 text-xs font-mono uppercase" id="driver-company">Company</p>
+                </div>
+                <button id="btn-logout" class="text-xs text-red-400 border border-red-900 px-3 py-1 rounded hover:bg-red-900/20 transition">LOGOUT</button>
+            </div>
+            <div class="bg-slate-900 p-4 rounded mb-4">
+                <label class="text-[10px] text-gray-500 uppercase font-bold">Select Route</label>
+                <select id="shift-route" class="w-full bg-slate-950 border border-gray-700 text-white p-2 rounded mt-1 outline-none focus:border-green-500 font-mono text-sm uppercase"></select>
+            </div>
+            <button id="btn-shift" class="w-full py-6 rounded bg-gradient-to-r from-green-900 to-green-700 text-green-100 font-bold text-lg tracking-[0.2em] shadow-[0_0_20px_rgba(21,128,61,0.3)] transition hover:scale-[1.02]">START SHIFT</button>
+            <div id="gps-status" class="mt-4 text-center text-xs font-mono text-gray-500">GPS STATUS: <span class="text-red-500">OFFLINE</span></div>
+        </div>
+    </div>
+    <script type="module" src="driver.js"></script>
+</body>
+</html>
